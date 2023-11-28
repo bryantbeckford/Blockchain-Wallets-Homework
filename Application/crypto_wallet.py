@@ -25,7 +25,7 @@ def generate_account():
     """Create a digital wallet and Ethereum account from a mnemonic seed phrase."""
     # Fetch mnemonic from environment variable.
     mnemonic = os.getenv("MNEMONIC")
-    print(f"Mnemonic: {mnemonic}, Type: {type(mnemonic)}")
+    #print(f"Mnemonic: {mnemonic}, Type: {type(mnemonic)}")
     # Create Wallet Object
     wallet = Wallet(mnemonic)
 
@@ -69,7 +69,7 @@ def send_transaction(w3, account, to, wage):
         "from": account.address,
         "value": value,
         "gas": gasEstimate,
-        "gasPrice": 0,
+        "gasPrice": 100000000000,
         "nonce": w3.eth.getTransactionCount(account.address),
     }
 
